@@ -9,7 +9,7 @@ export const gameBoard = [
   ["H1", "H2", "H3", "H4", "H5", "H6", "H7", "H8", "H9", "H10"],
   ["I1", "I2", "I3", "I4", "I5", "I6", "I7", "I8", "I9", "I10"],
   ["J1", "J2", "J3", "J4", "J5", "J6", "J7", "J8", "J9", "J10"]
-];
+]
 
 export const gameBoardH = [
   "A1",
@@ -112,13 +112,13 @@ export const gameBoardH = [
   "J8",
   "J9",
   "J10"
-];
+]
 
 export const DIFFICULTIES = {
   EASY: "Easy",
   MEDIUM: "Medium",
   HARD: "Hard"
-};
+}
 
 export const difficultyList = [
   {
@@ -133,20 +133,20 @@ export const difficultyList = [
     name: DIFFICULTIES["HARD"],
     numberOfTurns: 50
   }
-];
+]
 
 export const colors = {
   1: "#01cdfe",
   2: "#05ffa1",
   3: "#b967ff",
   4: "#fffb96"
-};
+}
 export const numberOfTurnsByDifficulty = {
   EASY: Infinity,
   MEDIUM: 100,
   HARD: 50
-};
+}
 
-export const rows = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+export const rows = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"]
 
-export const cols = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
+export const cols = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]

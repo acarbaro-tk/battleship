@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from "styled-components"
+import { Link } from "react-router-dom"
 export const Navbar = () => {
   return (
     <StyledNavbar>
@@ -16,8 +16,8 @@ export const Navbar = () => {
         </div>
       </GameMenu>
     </StyledNavbar>
-  );
-};
+  )
+}
 
 const StyledNavbar = styled.div`
   height: 64px;
@@ -27,22 +27,22 @@ const StyledNavbar = styled.div`
   max-width: 800px;
   margin: 0 auto;
   justify-content: space-between;
-`;
+`
 
 const StyledLogo = styled.div`
   font-weight: 600;
   font-size: 24px;
   line-height: 20px;
-`;
+`
 
 const GameMenu = styled.div`
   display: flex;
   gap: 1rem;
-`;
+`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
   color: inherit;
   font-weight: 300;
   font-size: 18px;
-`;
+`

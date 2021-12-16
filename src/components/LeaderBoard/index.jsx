@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
-import { Table } from "antd";
+import { useEffect, useState } from "react"
+import { Table } from "antd"
 export const LeaderBoard = () => {
-  const [games, setGames] = useState([]);
+  const [games, setGames] = useState([])
   useEffect(() => {
-    const pastGames = JSON.parse(localStorage.getItem("pastGames")) ?? [];
-    setGames(pastGames.map((game) => ({ ...game, key: Math.random() })));
-  }, []);
+    const pastGames = JSON.parse(localStorage.getItem("pastGames")) ?? []
+    setGames(pastGames.map((game) => ({ ...game, key: Math.random() })))
+  }, [])
 
   const columns = [
     {
@@ -28,7 +28,7 @@ export const LeaderBoard = () => {
       dataIndex: "date",
       key: "date"
     }
-  ];
+  ]
   return (
     <div>
       <div>
@@ -39,5 +39,5 @@ export const LeaderBoard = () => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
