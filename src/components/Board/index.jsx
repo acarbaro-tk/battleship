@@ -33,17 +33,20 @@ export const Board = () => {
       localStorage.setItem("pastGames", JSON.stringify(pastGames))
     }
 
-    isWinner &&
+    if (isWinner) {
       Swal.fire("Congratulations! You won the game").then((result) => {
         result.isConfirmed && saveGame()
       })
-    isGameOver &&
+    }
+
+    if (isGameOver) {
       Swal.fire("You lost. Try again").then((result) => {
         if (result.isConfirmed) {
           dispatch({ type: "RESET" })
           saveGame()
         }
       })
+    }
   }, [isWinner, isGameOver, dispatch, difficulty, currentTurn])
 
   return (
@@ -51,7 +54,7 @@ export const Board = () => {
       <div>
         <div>
           <div>Difficulty: {state?.gameDifficulty?.name}</div>
-          <div>Turn: {currentTurn}</div>
+          <div data-testid="difficulty-turn">Turn: {currentTurn}</div>
         </div>
 
         <FlexContainer>
@@ -71,14 +74,17 @@ export const Board = () => {
               <BoardItem
                 key={Math.random()}
                 onClick={() => handleAttackShip(index)}
+                data-testid="board-item"
                 color={item.color}>
                 {item.isVisited && item.containsShip && (
-                  <img src={shipIcon} alt="ship" />
+                  <img src={shipIcon} alt="ship" data-testid="ship" />
                 )}
                 {item.isVisited && !item.containsShip && (
-                  <img src={crossIcon} alt="cross" />
+                  <img src={crossIcon} alt="cross" data-testid="cross" />
                 )}
-                {!item.isVisited && <img src={oceanIcon} alt="X" />}
+                {!item.isVisited && (
+                  <img src={oceanIcon} alt="X" data-testid="ocean" />
+                )}
               </BoardItem>
             ))}
           </StyledBoard>
